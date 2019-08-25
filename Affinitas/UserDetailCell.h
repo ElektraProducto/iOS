@@ -36,4 +36,7 @@
 @property (weak, nonatomic)  id<UserDetailCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *productSegmentedControl;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnSendBudget;
+
+
 @end

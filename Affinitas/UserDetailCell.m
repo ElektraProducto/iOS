@@ -62,6 +62,18 @@ BOOL segmentedHasChanged = NO;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self setValueForCell:detail];
+    if (detail.isTech == FALSE) {
+        [self.kJobTitle setTextColor:[UIColor darkGrayColor]];
+        [self.collectionView setHidden:TRUE];
+    }else{
+        [self.kJobTitle setTextColor:[UIColor greenColor]];
+        [self.collectionView setHidden:FALSE];
+    }
+    
+    if ([detail.phone isEqualToString:@""] || detail.phone == NULL) {
+        [self.productSegmentedControl removeSegmentAtIndex:0 animated:FALSE];
+        [self.productSegmentedControl setSelectedSegmentIndex:0];
+    }
 }
 
 -(void)setValueForCell:(AFUsers*)detail{
@@ -75,9 +87,18 @@ BOOL segmentedHasChanged = NO;
     if (detail.isTech == FALSE) {
         [self.kJobTitle setTextColor:[UIColor darkGrayColor]];
         [self.collectionView setHidden:TRUE];
+        [self.btnSendBudget setHidden:TRUE];
+        [self.productSegmentedControl setHidden:TRUE];
     }else{
         [self.kJobTitle setTextColor:[UIColor greenColor]];
         [self.collectionView setHidden:FALSE];
+        [self.btnSendBudget setHidden:FALSE];
+        [self.productSegmentedControl setHidden:FALSE];
+    }
+    
+    if ([detail.phone isEqualToString:@""] || detail.phone == NULL) {
+        [self.productSegmentedControl removeSegmentAtIndex:0 animated:FALSE];
+        [self.productSegmentedControl setSelectedSegmentIndex:0];
     }
 }
 

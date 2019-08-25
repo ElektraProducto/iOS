@@ -76,7 +76,7 @@ BOOL isRecomendedProduct = NO;
 }
 
 - (void)sendBudget {
-    if([MFMessageComposeViewController canSendText]) {
+    if([MFMessageComposeViewController canSendText] && self.userDetailList.data.recommendedProducts != NULL) {
         MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init]; // Create message VC
         messageController.messageComposeDelegate = self; // Set delegate to current instance
         

@@ -139,6 +139,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92549019610000005" green="0.2901960784" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="btnSendBudget" destination="mYP-Va-NZO" id="hpi-rb-9h5"/>
                 <outlet property="collectionView" destination="NOg-f6-B8r" id="KUk-pD-eWq"/>
                 <outlet property="kCityPostcode" destination="O1N-AY-iPb" id="joV-id-5gm"/>
                 <outlet property="kFirstNameAge" destination="ky8-iG-Dp2" id="lMB-Mu-ILc"/>
