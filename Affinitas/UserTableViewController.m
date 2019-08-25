@@ -22,6 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Erik";
+    self.navigationItem.title = @"Erik";
+    self.navigationController.title = @"Erik";
+    self.navigationController.navigationBar.topItem.title = @"Erik";
+
+    
     AFUserRoot *root = [[AFUserRoot alloc] init];
     root.success = true;
     self.ref = [[FIRDatabase database] reference];
@@ -104,10 +111,6 @@
     }];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    //[self fetchData];
-}
-
 -(void)fetchData{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -128,10 +131,6 @@
     [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -188,9 +187,6 @@
     [[stackView.leftAnchor constraintEqualToAnchor:view.leftAnchor constant:8] setActive:TRUE];
     [[stackView.topAnchor constraintEqualToAnchor:view.topAnchor constant:8] setActive: TRUE];
     [[stackView.bottomAnchor constraintEqualToAnchor:view.bottomAnchor constant:8] setActive: TRUE];
-    
-    
-    
     
     return view;
 }
