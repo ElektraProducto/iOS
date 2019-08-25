@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-f6-B8r">
-                        <rect key="frame" x="8" y="315.5" width="304" height="189"/>
+                        <rect key="frame" x="8" y="315.5" width="304" height="173"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="1" id="9PZ-dz-9To">
                             <size key="itemSize" width="95" height="95"/>
@@ -159,7 +159,7 @@
                     <constraint firstItem="ky8-iG-Dp2" firstAttribute="top" secondItem="4Yn-6j-Sqz" secondAttribute="bottom" constant="2" id="ZkD-aA-71s"/>
                     <constraint firstItem="i4F-0y-mH3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="gnb-i9-Nxi"/>
                     <constraint firstItem="HyZ-uF-6zq" firstAttribute="top" secondItem="ky8-iG-Dp2" secondAttribute="bottom" constant="2.5" id="hDD-Yx-7gX"/>
-                    <constraint firstAttribute="bottom" secondItem="NOg-f6-B8r" secondAttribute="bottom" id="hn3-3v-f7I"/>
+                    <constraint firstAttribute="bottom" secondItem="NOg-f6-B8r" secondAttribute="bottom" constant="16" id="hn3-3v-f7I"/>
                     <constraint firstItem="EIf-mz-b9x" firstAttribute="top" secondItem="ky8-iG-Dp2" secondAttribute="bottom" constant="19.5" id="jdJ-xe-zxr"/>
                     <constraint firstItem="ky8-iG-Dp2" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="o3w-7X-BLV"/>
                     <constraint firstItem="NOg-f6-B8r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="osw-O5-hji"/>

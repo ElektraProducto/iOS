@@ -44,7 +44,7 @@ BOOL isRecomendedProduct = NO;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [[UIScreen mainScreen] bounds].size.height;
+    return  [[UIScreen mainScreen] bounds].size.height - 120;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
