@@ -42,6 +42,8 @@
         [self setUserImage:user];
         [self setUserImagesCountTitle:user];
         
+        self.kUserImagesCountLabel.text = [NSString stringWithFormat:@"%@",[user valueForKey:@"credit"]];
+        
         DKLog(K_VERBOSE_MOBILE_API_JSON, @"User List --> {%@}",user);
     }
     return  self;

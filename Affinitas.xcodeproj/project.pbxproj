@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2745E7342312A43500E099E3 /* AFProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 2745E7332312A43500E099E3 /* AFProduct.m */; };
 		371C1FC41BF2793800782949 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C1FC31BF2793800782949 /* main.m */; };
 		371C1FC71BF2793800782949 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C1FC61BF2793800782949 /* AppDelegate.m */; };
 		371C1FCD1BF2793800782949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371C1FCB1BF2793800782949 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2745E7322312A43500E099E3 /* AFProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFProduct.h; sourceTree = "<group>"; };
+		2745E7332312A43500E099E3 /* AFProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFProduct.m; sourceTree = "<group>"; };
 		371C1FBF1BF2793800782949 /* Affinitas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Affinitas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371C1FC31BF2793800782949 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		371C1FC51BF2793800782949 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				37CE71541BF3751100C72F96 /* AFUserDetailRoot.m */,
 				37CE71561BF3752C00C72F96 /* AFUserDetail.h */,
 				37CE71571BF3752C00C72F96 /* AFUserDetail.m */,
+				2745E7322312A43500E099E3 /* AFProduct.h */,
+				2745E7332312A43500E099E3 /* AFProduct.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				37CE71491BF2B7D300C72F96 /* UserListCell.m in Sources */,
 				37CE71501BF3404100C72F96 /* AFUserRoot.m in Sources */,
 				379F02651BF3A49200FB88D6 /* UserDetailGaleryCell.m in Sources */,
+				2745E7342312A43500E099E3 /* AFProduct.m in Sources */,
 				3720A3DB1BF68D8700611482 /* UserImageViewController.m in Sources */,
 				37CE71441BF2B6C600C72F96 /* UserDetailTableViewController.m in Sources */,
 				37CE71551BF3751100C72F96 /* AFUserDetailRoot.m in Sources */,

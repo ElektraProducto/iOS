@@ -11,6 +11,7 @@
 #import "AFUserDetailRoot.h"
 #import "UserDetailGaleryCell.h"
 #import "UserImageViewController.h"
+#import "AFProduct.h"
 
 #define K_CELL          @"UserDetailCell"
 #define K_CELL_GALERY   @"UserDetailGaleryCell"
@@ -18,7 +19,7 @@
 BOOL segmentedHasChanged = NO;
 
 @implementation UserDetailCell{
-    NSArray *userImages;
+    NSArray <AFProduct *>*userImages;
 }
 - (instancetype)initWithCustom{
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:K_CELL];
@@ -31,6 +32,7 @@ BOOL segmentedHasChanged = NO;
 
 - (void)awakeFromNib {
     // Make it round
+    //[super awakeFromNib];
     self.kUserImage.contentMode = UIViewContentModeScaleAspectFill;
     self.kUserImage.layer.cornerRadius =self.kUserImage.frame.size.height/2;
     self.kUserImage.layer.masksToBounds = YES;
@@ -47,7 +49,7 @@ BOOL segmentedHasChanged = NO;
 - (void)setDataDetail00:(AFUsers*)detail{
     DKLog(K_VERBOSE_MOBILE_API_JSON, @"User Detail --> {%@}",detail);
     [self.collectionView registerClass:[UserDetailGaleryCell class] forCellWithReuseIdentifier:K_CELL_GALERY];
-    userImages = [detail valueForKey:@"images"];
+    userImages = [detail valueForKey:@"products"];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self setValueForCell:detail];
@@ -56,7 +58,7 @@ BOOL segmentedHasChanged = NO;
 - (void)setDataDetail01:(AFUsers*)detail{
     DKLog(K_VERBOSE_MOBILE_API_JSON, @"User Detail --> {%@}",detail);
     [self.collectionView registerClass:[UserDetailGaleryCell class] forCellWithReuseIdentifier:K_CELL_GALERY];
-    userImages = [detail valueForKey:@"recommendedImages"];
+    userImages = [detail valueForKey:@"recommendedProducts"];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self setValueForCell:detail];
@@ -70,6 +72,13 @@ BOOL segmentedHasChanged = NO;
     self.kFirstNameAge.text = [NSString stringWithFormat:@"%@, %@",[detail valueForKey:JSON_FIRSTNAME], [detail valueForKey:JSON_AGE]];
     [self.kUserImage sd_setImageWithURL:[self replaceURL:[detail valueForKey:@"image_url"]]];
     [self.collectionView reloadData];
+    if (detail.isTech == FALSE) {
+        [self.kJobTitle setTextColor:[UIColor darkGrayColor]];
+        [self.collectionView setHidden:TRUE];
+    }else{
+        [self.kJobTitle setTextColor:[UIColor greenColor]];
+        [self.collectionView setHidden:FALSE];
+    }
 }
 
 
@@ -94,16 +103,22 @@ BOOL segmentedHasChanged = NO;
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UserDetailGaleryCell *cell = (UserDetailGaleryCell *)[collectionView dequeueReusableCellWithReuseIdentifier:K_CELL_GALERY forIndexPath:indexPath];
-    [cell.kThumbImage sd_setImageWithURL:[self replaceURL:(NSString*)userImages[indexPath.row]]];
+    [cell.kThumbImage sd_setImageWithURL:[self replaceURL:(NSString*)userImages[indexPath.row].foto]];
+    cell.lblTitle.text = [[NSString alloc] initWithFormat:@"%@ \n%@",userImages[indexPath.row].precio, userImages[indexPath.row].nombre ];
     return cell;
+    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [self.delegate didImageGaleryClicked:[self replaceURL:(NSString*)userImages[indexPath.row]]];
+    [self.delegate didImageGaleryClicked:[self replaceURL:(NSString*)userImages[indexPath.row].foto]];
 }
 
 - (IBAction)segmentedControlTap:(UISegmentedControl *)sender {
     [self.delegate didTappedSegmentedControl:!segmentedHasChanged];
+}
+
+- (IBAction)sendBudget:(UIButton *)sender {
+    [self.delegate sendBudget];
 }
 
 

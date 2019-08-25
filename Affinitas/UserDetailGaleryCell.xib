@@ -12,24 +12,43 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserDetailGaleryCell" id="Ti0-be-8aZ" customClass="UserDetailGaleryCell">
-            <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Forward-50" translatesAutoresizingMaskIntoConstraints="NO" id="N8b-r2-kAu">
-                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Forward-50" translatesAutoresizingMaskIntoConstraints="NO" id="N8b-r2-kAu">
+                        <rect key="frame" x="37.5" y="0.0" width="75" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="N8b-r2-kAu" secondAttribute="height" multiplier="1:1" id="Ubb-YV-TdE"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PanasoniPanasoniPanasoniPanasoni" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJT-0k-lSp">
+                        <rect key="frame" x="4" y="79" width="142" height="63"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-            <size key="customSize" width="171" height="179"/>
+            <constraints>
+                <constraint firstItem="N8b-r2-kAu" firstAttribute="top" secondItem="Ti0-be-8aZ" secondAttribute="top" id="0QF-Ai-yAs"/>
+                <constraint firstAttribute="trailing" secondItem="dJT-0k-lSp" secondAttribute="trailing" constant="4" id="2QM-lU-Jet"/>
+                <constraint firstAttribute="bottom" secondItem="dJT-0k-lSp" secondAttribute="bottom" constant="8" id="6Xu-qz-YUl"/>
+                <constraint firstItem="N8b-r2-kAu" firstAttribute="width" secondItem="Ti0-be-8aZ" secondAttribute="width" multiplier="0.5" id="MlT-Xx-AnU"/>
+                <constraint firstItem="dJT-0k-lSp" firstAttribute="top" secondItem="N8b-r2-kAu" secondAttribute="bottom" constant="4" id="WBu-FR-h6Z"/>
+                <constraint firstItem="dJT-0k-lSp" firstAttribute="leading" secondItem="Ti0-be-8aZ" secondAttribute="leading" constant="4" id="lk7-Ya-yCP"/>
+                <constraint firstItem="N8b-r2-kAu" firstAttribute="centerX" secondItem="Ti0-be-8aZ" secondAttribute="centerX" id="uf8-nr-nP3"/>
+                <constraint firstItem="dJT-0k-lSp" firstAttribute="centerX" secondItem="Ti0-be-8aZ" secondAttribute="centerX" id="ynS-u5-F3Z"/>
+            </constraints>
+            <size key="customSize" width="233" height="200"/>
             <connections>
                 <outlet property="kThumbImage" destination="N8b-r2-kAu" id="dSw-EZ-Tl1"/>
+                <outlet property="lblTitle" destination="dJT-0k-lSp" id="7yq-eq-NUl"/>
             </connections>
-            <point key="canvasLocation" x="240.5" y="329"/>
+            <point key="canvasLocation" x="283.33333333333337" y="328.79464285714283"/>
         </collectionViewCell>
     </objects>
     <resources>

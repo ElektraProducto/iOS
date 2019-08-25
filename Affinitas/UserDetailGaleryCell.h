@@ -11,4 +11,7 @@
 @interface UserDetailGaleryCell : UICollectionViewCell <UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *kThumbImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+
+
 @end

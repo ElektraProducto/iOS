@@ -15,6 +15,7 @@
 @protocol UserDetailCellDelegate <NSObject>
 -(void)didImageGaleryClicked:(NSURL*)imageURL;
 -(void)didTappedSegmentedControl:(BOOL*)isSelected;
+-(void)sendBudget;
 @end
 
 @interface UserDetailCell : UITableViewCell<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
